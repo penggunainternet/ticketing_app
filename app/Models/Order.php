@@ -8,7 +8,12 @@ class Order extends Model
 {
     protected $fillable = [
         'user_id',
+        'order_date',
         'total_harga',
+    ];
+
+    protected $casts = [
+        'order_date' => 'datetime',
     ];
 
     public function user()

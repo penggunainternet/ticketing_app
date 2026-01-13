@@ -10,7 +10,7 @@
         </div>
     </div>
 
-    <section class="max-w-7xl mx-auto py-12 px-6">
+    {{-- <section class="max-w-7xl mx-auto py-12 px-6">
         <div class="flex justify-between items-center mb-8">
             <h2 class="text-2xl font-black uppercase italic">Event</h2>
             <div class="flex gap-2">
@@ -31,5 +31,5 @@
                     :price="$event->tikets_min_harga" :image="$event->gambar" :href="route('events.show', $event)" />
             @endforeach
         </div>
-    </section>
+    </section> --}}
 </x-app-layout>
