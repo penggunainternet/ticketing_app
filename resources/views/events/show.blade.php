@@ -47,9 +47,8 @@
               @forelse($event->tikets as $tiket)
               <div class="card card-side shadow-sm p-4 items-center">
                 <div class="flex-1">
-                  <h4 class="font-bold">{{ $tiket->tipe }}</h4>
+                  <h4 class="font-bold">{{ $tiket->tipeTicket->nama ?? '-' }}</h4>
                   <p class="text-sm text-gray-500">Stok: <span id="stock-{{ $tiket->id }}">{{ $tiket->stok }}</span></p>
-                  <p class="text-sm mt-2">{{ $tiket->keterangan ?? '' }}</p>
                 </div>
 
                 <div class="w-44 text-right">
@@ -145,7 +144,7 @@
             id: {{ $tiket->id }},
             price: {{ $tiket->harga ?? 0 }},
             stock: {{ $tiket->stok }},
-            tipe: "{{ e($tiket->tipe) }}"
+            tipe: "{{ e($tiket->tipeTicket->nama ?? '-') }}"
           },
         @endforeach
       };

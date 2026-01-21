@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use App\Models\Kategori;
+use App\Models\TipeTicket;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -63,8 +64,9 @@ class EventController extends Controller
         $event = Event::findOrFail($id);
         $categories = Kategori::all();
         $tickets = $event->tikets;
+        $tipeTickets = TipeTicket::all();
 
-        return view('pages.admin.event.show', compact('event', 'categories', 'tickets'));
+        return view('pages.admin.event.show', compact('event', 'categories', 'tickets', 'tipeTickets'));
     }
 
     /**
